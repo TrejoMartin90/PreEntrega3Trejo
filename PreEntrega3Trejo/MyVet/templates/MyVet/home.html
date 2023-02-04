@@ -1,0 +1,43 @@
+{% extends 'MyVet/parent.html' %}
+{% load static %}
+{% block contenidoDinamico %}
+
+<div class="row gx-4 gx-lg-5">
+    <div class="col-md-4 mb-5">
+        <div class="card h-100">
+            <a href="{% url 'Ver Pacientes' %}">
+                <div class="card-body">
+                    <h2 class="card-title">Pacientes</h2>
+                    <img class="card-img-top" src="{% static 'MyVet/images/paciente_home.png' %}" alt="Card image cap">
+                  </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4 mb-5">
+        <div class="card h-100">
+            <a href="{% url 'Ver Profesionales' %}">
+                <div class="card-body">
+                    <h2 class="card-title">Profesionales</h2>
+                    <img class="card-img-top" src="{% static 'MyVet/images/profesional_home.jpg' %}" alt="Card image cap">
+                   </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4 mb-5">
+        <div class="card h-100">
+            <a href="{% url 'Ver Visitas' %}">
+                <div class="card-body">
+                    <h2 class="card-title">Visitas</h2>
+                    <img class="card-img-top" src="{% static 'MyVet/images/visita_home.jpeg' %}" alt="Card image cap">
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+

@@ -2,7 +2,7 @@ from django.urls import path
 from MyVet import views
 
 urlpatterns = [
-    path('', views.home),
+    path('', views.home, name = "Home"),
     path('profesionales', views.ver_profesionales, name="Ver Profesionales"),
     path('pacientes', views.ver_pacientes, name="Ver Pacientes"),
     path('visitas', views.ver_visitas, name="Ver Visitas"),

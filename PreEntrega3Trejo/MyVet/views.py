@@ -4,22 +4,22 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-	return HttpResponse('Home Page')
+	return render(request,"MyVet/home.html")
 
 def ver_profesionales (request):
-	return HttpResponse("Listado de Profesionales")
+	return render(request,"MyVet/ver_profesionales.html")
 
 def ver_visitas (request):
-	return HttpResponse("Listado de Visitas")
+	return render(request,"MyVet/ver_visitas.html")
 
 def ver_pacientes (request):
-	return HttpResponse("Listado de Pacientes")
+	return render(request,"MyVet/ver_pacientes.html")
 
 def crear_profesional (request):
-	return HttpResponse("Creación de Profesional")
+	return render(request,"MyVet/crear_profesional.html")
 
 def crear_visita (request):
-	return HttpResponse("Creación de Visitas")
+	return render(request,"MyVet/crear_visita.html")
 
 def crear_paciente (request):
-	return HttpResponse("Creación de Pacientes")
+	return render(request,"MyVet/crear_paciente.html")
