@@ -1,11 +1,7 @@
 {% extends 'MyVet/parent.html' %}
 {% load static %}
 {% block contenidoDinamico %}
-
-<h1 class="card-title">Pacientes</h2>
-
-<a href="{% url 'Crear Paciente' %}" class="btn btn-secondary btn-lg active float-right" role="button" aria-pressed="true">Crear Paciente</a>
-<a href="{% url 'Buscar Paciente' %}" class="btn btn-secondary btn-lg active float-right" role="button" aria-pressed="true">Buscar Pacientes</a>
+<h1 class="card-title">Resultados de búsqueda por Nombre = {{ nombre }}</h1>
 
 {% if pacientes %}
 <table class="table">
@@ -30,7 +26,9 @@
   </table>
   
 {% else %}
-<h3 class="card-title">Aún no existen pacientes en el sistema.</h3>
+
+<h3 class="card-title">No se han encontrado resultados</h3>
 {% endif %}
 
+<a href="{% url 'Buscar Paciente' %}" class="btn btn btn-light" role="button" aria-pressed="true">Realizar otra búsqueda</a>
 {% endblock %}

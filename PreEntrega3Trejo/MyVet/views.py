@@ -13,9 +13,11 @@ def ver_profesionales (request):
 
 def ver_visitas (request):
 	return render(request,"MyVet/ver_visitas.html")
+	
 
 def ver_pacientes (request):
-	return render(request,"MyVet/ver_pacientes.html")
+	pacientes = Paciente.objects.all().order_by("nombre").values()
+	return render(request,"MyVet/ver_pacientes.html",{"pacientes": pacientes})
 
 def crear_profesional (request):
 	if request.method == "POST":
@@ -50,3 +52,19 @@ def crear_paciente (request):
 		nuevoPaciente.save()
 		return render(request, "MyVet/home.html")
 	return render(request,"MyVet/crear_paciente.html")
+
+def buscar_paciente(request):
+	return render(request, "MyVet/buscar_paciente.html")
+
+def buscar_paciente_result(request):
+	if request.GET["nombre"]:
+		nombre = request.GET["nombre"]
+		pacientes = Paciente.objects.filter(nombre__icontains=nombre)
+		return render(request,"MyVet/buscar_paciente_result.html", {"pacientes": pacientes, "nombre":nombre})
+	else:
+		respuesta = "No se han enviado datos"
+	return HttpResponse(respuesta)
+
+def buscar_pacientes(request):
+	pacientes = Paciente.objects.filter()
+	return render(request,"MyVet/buscar_paciente_result.html", {"pacientes": pacientes})

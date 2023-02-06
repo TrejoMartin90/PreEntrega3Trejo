@@ -1,0 +1,14 @@
+{% extends 'MyVet/parent.html' %}
+{% load static %}
+{% block contenidoDinamico %}
+<h1 class="card-title">Buscar Pacientes</h1>
+<form action="buscarPacienteResult" method="GET">{% csrf_token %}
+    <div class="form-group col-md-4">
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="nombre">
+    </div>
+    <a href="{% url 'Ver Pacientes' %}" class="btn btn btn-light" role="button" aria-pressed="true">Volver</a>
+    <button type="submit" class="btn btn-dark">Buscar Pacientes</button>
+</form>
+
+{% endblock %}
