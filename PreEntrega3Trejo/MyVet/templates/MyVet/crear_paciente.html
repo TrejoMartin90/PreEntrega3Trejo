@@ -2,7 +2,71 @@
 {% load static %}
 {% block contenidoDinamico %}
 
-<h1 class="card-title">Nuevo Paciente</h2>
+<h1 class="card-title">Nuevo Paciente</h1>
+<form action="crearPaciente" method="POST">{% csrf_token %}
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>Nombre</label>
+            <input type="text" class="form-control" name="nombre">
+        </div>
+        <div class="form-group col-md-4">
+            <label>Especie</label>
+            <input type="text" class="form-control" name="especie">
+        </div>
+        <div class="form-group col-md-4">
+            <label>Raza</label>
+            <input type="text" class="form-control" name="raza">
+        </div>
+        <div class="form-group col-md-2">
+            <label>Fecha de Nacimiento</label>
+            <input type="date" class="form-control" name="fecha_nacimiento">
+        </div>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Peso (en KGs)</label>
+            <input type="number" class="form-control" name="peso" min="0">
+        </div>
+        <div class="form-group col-md-2">
+            <label>Sexo</label>
+            <select class="form-select" name="sexo">
+                <option selected>Seleccione un Sexo</option>
+                <option value="Hembra">Hembra</option>
+                <option value="Macho">Macho</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Está Castrado?</label>
+            <select class="form-select" name="esta_castrado">
+                <option selected>Seleccione una opción</option>
+                <option value="True">Si</option>
+                <option value="False">No</option>
+            </select>
+            <!--<input class="form-check-input" type="checkbox" name="esta_castrado" value="True">-->
+        </div>
+        <div class="form-group col-md-2">
+            <label>DNI Tutor</label>
+            <input type="text" class="form-control" name="dni_tutor">
+        </div>
+        <div class="form-group col-md-4">
+            <label>Dirección</label>
+            <input type="text" class="form-control" name="direccion">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Descripción</label>
+            <textarea class="form-control" rows="3" name="descripcion"></textarea>
+        </div>
+        <div class=" col-12">
+            <a href="{% url 'Ver Pacientes' %}" class="btn btn btn-light" role="button" aria-pressed="true">Cancelar</a>
+            <button type="submit" class="btn btn-dark">Crear Paciente</button>
+        </div>
+    </div>
+</form>
 
-
+<!-- <form action="" method="POST">{% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+    <a href="{% url 'Ver Pacientes' %}" class="btn btn btn-light" role="button" aria-pressed="true">Cancelar</a>
+    <button type="submit" class="btn btn-dark">Crear Paciente</button>
+</form>-->
 {% endblock %}

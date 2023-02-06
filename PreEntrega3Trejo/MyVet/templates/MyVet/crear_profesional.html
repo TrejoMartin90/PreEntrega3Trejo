@@ -3,6 +3,12 @@
 {% block contenidoDinamico %}
 
 <h1 class="card-title">Nuevo Profesional</h2>
-
+<form action="" method="POST">{% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+    <a href="{% url 'Ver Profesionales' %}" class="btn btn btn-light" role="button" aria-pressed="true">Cancelar</a>
+    <button type="submit" class="btn btn-dark">Crear Profesional</button>
+</form>
 
 {% endblock %}

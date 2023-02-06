@@ -4,5 +4,12 @@
 
 <h1 class="card-title">Nueva Visita</h2>
 
+<form action="" method="POST">{% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+    <a href="{% url 'Ver Visitas' %}" class="btn btn btn-light" role="button" aria-pressed="true">Cancelar</a>
+    <button type="submit" class="btn btn-dark">Crear Visita</button>
+</form>
 
 {% endblock %}
