@@ -3,6 +3,30 @@
 {% block contenidoDinamico %}
 
 <h1 class="card-title">Visitas</h2>
-    <a href="{% url 'Crear Visita' %}" class="btn btn-secondary btn-lg active float-right" role="button" aria-pressed="true">Crear Visita</a>
+<a href="{% url 'Crear Visita' %}" class="btn btn-secondary btn-lg active float-right" role="button" aria-pressed="true">Crear Visita</a>
+
+{% if visitas %}
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">Paciente</th>
+        <th scope="col">Profesional</th>
+      </tr>
+    </thead>
+    <tbody>  
+        {% for visita in visitas %}
+        <tr>
+            <td>{{visita.fecha_visita}}</td>
+            <td>{{visita.nombre_paciente}}</td>
+            <td>{{visita.nombre_profesional}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  
+{% else %}
+<h3 class="card-title">Aún no existen visitas en el sistema.</h3>
+{% endif %}
 
 {% endblock %}

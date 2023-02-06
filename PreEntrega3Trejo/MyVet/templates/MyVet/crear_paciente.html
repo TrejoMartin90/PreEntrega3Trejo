@@ -7,28 +7,28 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <label>Nombre</label>
-            <input type="text" class="form-control" name="nombre">
+            <input type="text" class="form-control" name="nombre"required>
         </div>
         <div class="form-group col-md-4">
             <label>Especie</label>
-            <input type="text" class="form-control" name="especie">
+            <input type="text" class="form-control" name="especie" required>
         </div>
         <div class="form-group col-md-4">
             <label>Raza</label>
-            <input type="text" class="form-control" name="raza">
+            <input type="text" class="form-control" name="raza" required>
         </div>
         <div class="form-group col-md-2">
             <label>Fecha de Nacimiento</label>
-            <input type="date" class="form-control" name="fecha_nacimiento">
+            <input type="date" class="form-control" name="fecha_nacimiento" required>
         </div>
         </div>
         <div class="form-group col-md-2">
             <label>Peso (en KGs)</label>
-            <input type="number" class="form-control" name="peso" min="0">
+            <input type="number" class="form-control" name="peso" min="0" required>
         </div>
         <div class="form-group col-md-2">
             <label>Sexo</label>
-            <select class="form-select" name="sexo">
+            <select class="form-select" name="sexo" required>
                 <option selected>Seleccione un Sexo</option>
                 <option value="Hembra">Hembra</option>
                 <option value="Macho">Macho</option>
@@ -36,7 +36,7 @@
         </div>
         <div class="form-group col-md-2">
             <label>Está Castrado?</label>
-            <select class="form-select" name="esta_castrado">
+            <select class="form-select" name="esta_castrado" required>
                 <option selected>Seleccione una opción</option>
                 <option value="True">Si</option>
                 <option value="False">No</option>
@@ -45,11 +45,11 @@
         </div>
         <div class="form-group col-md-2">
             <label>DNI Tutor</label>
-            <input type="text" class="form-control" name="dni_tutor">
+            <input type="text" class="form-control" name="dni_tutor" required>
         </div>
         <div class="form-group col-md-4">
             <label>Dirección</label>
-            <input type="text" class="form-control" name="direccion">
+            <input type="text" class="form-control" name="direccion" required>
         </div>
         <div class="form-group col-md-6">
             <label>Descripción</label>

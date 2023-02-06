@@ -9,12 +9,13 @@ def home(request):
 	return render(request,"MyVet/home.html")
 
 def ver_profesionales (request):
-	return render(request,"MyVet/ver_profesionales.html")
+	profesionales = Profesional.objects.all().order_by("nombre_completo").values()
+	return render(request,"MyVet/ver_profesionales.html",{"profesionales":profesionales})
 
 def ver_visitas (request):
-	return render(request,"MyVet/ver_visitas.html")
+	visitas = Visita.objects.all().order_by("-fecha_visita").values()
+	return render(request,"MyVet/ver_visitas.html", {"visitas":visitas})
 	
-
 def ver_pacientes (request):
 	pacientes = Paciente.objects.all().order_by("nombre").values()
 	return render(request,"MyVet/ver_pacientes.html",{"pacientes": pacientes})

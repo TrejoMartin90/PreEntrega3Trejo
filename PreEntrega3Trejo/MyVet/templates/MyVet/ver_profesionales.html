@@ -5,5 +5,30 @@
 <h1 class="card-title">Profesionales</h2>
 <a href="{% url 'Crear Profesional' %}" class="btn btn-secondary btn-lg active float-right" role="button" aria-pressed="true">Crear Profesional</a>
 
+{% if profesionales %}
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Especialidad</th>
+        <th scope="col">DNI</th>
+      </tr>
+    </thead>
+    <tbody>  
+        {% for profesional in profesionales %}
+        <tr>
+            <td>{{profesional.nombre_completo}}</td>
+            <td>{{profesional.email}}</td>
+            <td>{{profesional.especialidad}}</td>
+            <td>{{profesional.dni}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  
+{% else %}
+<h3 class="card-title">Aún no existen profesionales en el sistema.</h3>
+{% endif %}
 
 {% endblock %}
