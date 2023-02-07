@@ -3208,10 +3208,19 @@ textarea.form-control-lg {
   border-color: #dc3545;
 }
 
+.btn-dark, .btn-dark:hover, .btn-dark:active, .btn-dark:visited {
+  background-color: #FF725E !important;
+  border-color: #FF725E !important;
+  margin-top:10px !important;
+  margin-bottom: 10px !important;
+}
+
 .btn-light {
   color: #000;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
+  margin-top:10px !important;
+  margin-bottom: 10px !important;
 }
 .btn-light:hover {
   color: #000;
